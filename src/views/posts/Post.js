@@ -4,15 +4,9 @@ import { FirestoreCollection } from 'react-firestore'
 import Error from '../misc/Error'
 import FirebaseAuth from '../misc/FirebaseAuth'
 import LikeButton from './LikeButton'
-import {
-  InternalLink,
-} from '../../styles/links'
-import {
-  Page,
-} from '../../styles/layout'
 
 const Post = ({match}) => (
-  <Page>
+  <div>
     <FirestoreCollection
       path={'posts'}
       filter={['slug', '==', match.params.slug]}
@@ -44,13 +38,13 @@ const Post = ({match}) => (
           <p>{post.content}</p>
           <FirebaseAuth>
             { ({auth}) => (
-              auth ? <InternalLink to={`/${post.slug}/edit`}>Edit</InternalLink> : null
+              auth ? <a href={`/${post.slug}/edit`}>Edit</a> : null
             )}
           </FirebaseAuth>
         </div>
       }}
     </FirestoreCollection>
-  </Page>
+  </div>
 )
 
 export default Post

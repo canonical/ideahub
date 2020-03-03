@@ -1,13 +1,9 @@
 import React from 'react'
 
-import {
-  InternalLink,
-} from '../../styles/links'
-
 const SearchResult = ({hit}) => (
-  <InternalLink to={`/${hit.slug}`}>
+  <a href={`/${hit.slug}`}>
     {hit.title}
-  </InternalLink>
+  </a>
 )
 
 export default SearchResult

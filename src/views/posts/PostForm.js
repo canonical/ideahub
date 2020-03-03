@@ -7,13 +7,6 @@
 
 import React from 'react'
 
-import {
-  FormRow,
-  FormLabel,
-  TextInput,
-  TextArea,
-} from '../../styles/forms'
-
 class PostForm extends React.Component {
 
   onSubmit = event => {
@@ -26,17 +19,17 @@ class PostForm extends React.Component {
     this.props.onSubmit(values)
   }
 
-  render() {    
+  render() {
     return <form onSubmit={this.onSubmit}>
-      <FormRow>
-        <FormLabel for="title">Title</FormLabel>
-        <TextInput type="text" name="title" defaultValue={this.props.post ? this.props.post.title : ''} required />
-      </FormRow>
+      <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" defaultValue={this.props.post ? this.props.post.title : ''} required />
+      </div>
 
-      <FormRow>
-        <FormLabel for="content">Content</FormLabel>
-        <TextArea type="text" name="content" defaultValue={this.props.post ? this.props.post.content : ''} required />
-      </FormRow>
+      <div>
+        <label for="content">Content</label>
+        <textarea id="content" name="content"  rows="4" cols="50" required>{this.props.post ? this.props.post.content : ''}</textarea>
+      </div>
 
       <button type="submit">Save post</button>
     </form>

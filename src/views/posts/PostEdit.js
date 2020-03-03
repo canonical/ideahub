@@ -5,12 +5,9 @@ import Error from '../misc/Error'
 import deletePost from '../../actions/deletePost'
 import updatePost from '../../actions/updatePost'
 import PostForm from './PostForm'
-import {
-  Page,
-} from '../../styles/layout'
 
 const PostEdit = ({match, history}) => (
-  <Page>
+  <div>
     <FirestoreCollection
       path={'posts'}
       filter={['slug', '==', match.params.slug]}
@@ -23,7 +20,7 @@ const PostEdit = ({match, history}) => (
         if (isLoading) {
           return <p>loading...</p>
         }
-        
+
         if (data.length === 0) {
           return <Error />
         }
@@ -42,7 +39,7 @@ const PostEdit = ({match, history}) => (
         </div>
       }}
     </FirestoreCollection>
-  </Page>
+  </div>
 )
 
 export default PostEdit

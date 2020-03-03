@@ -5,20 +5,18 @@ import React from "react";
 
 import logIn from "../../actions/logIn";
 import FirebaseAuth from "../misc/FirebaseAuth";
-import { HeaderFooterWrapper, Header, Footer } from "../../styles/layout";
-import { HeaderLink } from "../../styles/links";
 
 const Layout = ({ children }) => (
-  <HeaderFooterWrapper>
-    <Header>
-      <HeaderLink to="/">Ideahub</HeaderLink>
+  <div>
+    <header>
+      <a href="/">Ideahub</a>
 
       <div style={{ float: "right" }}>
-        <HeaderLink to="/search">
+        <a href="/search">
           <span role="img" aria-label="search">
             🔎
           </span>
-        </HeaderLink>{" "}
+        </a>{" "}
         <FirebaseAuth>
           {({ isLoading, error, auth }) => {
             if (isLoading) {
@@ -29,11 +27,11 @@ const Layout = ({ children }) => (
             }
             if (auth) {
               return (
-                <HeaderLink to={`/account`}>
+                <a href={`/account`}>
                   <span role="img" aria-label="account">
                     👤
                   </span>
-                </HeaderLink>
+                </a>
               );
             } else {
               return <button onClick={logIn}>log in</button>;
@@ -41,12 +39,12 @@ const Layout = ({ children }) => (
           }}
         </FirebaseAuth>
       </div>
-    </Header>
+    </header>
 
     {children}
 
-    <Footer>© {new Date().getFullYear()}</Footer>
-  </HeaderFooterWrapper>
+    <div>© {new Date().getFullYear()}</div>
+  </div>
 );
 
 export default Layout;

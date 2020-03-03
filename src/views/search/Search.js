@@ -9,13 +9,9 @@ import {
 } from 'react-instantsearch-dom'
 
 import SearchResult from './SearchResult'
-import '../../styles/search'
-import {
-  Page,
-} from '../../styles/layout'
 
 const Search = () => (
-  <Page>
+  <div>
     <InstantSearch
       appId={process.env.REACT_APP_ALGOLIA_APP_ID}
       apiKey={process.env.REACT_APP_ALGOLIA_SEARCH_KEY}
@@ -24,7 +20,7 @@ const Search = () => (
       <SearchBox autofocus />
       <Hits hitComponent={SearchResult} />
     </InstantSearch>
-  </Page>
+  </div>
 )
 
 export default Search

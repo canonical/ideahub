@@ -5,10 +5,9 @@ import Error from "../misc/Error";
 import logIn from "../../actions/logIn";
 import createPost from "../../actions/createPost";
 import PostForm from "./PostForm";
-import { Page } from "../../styles/layout";
 
 const PostNew = ({ history }) => (
-  <Page>
+  <div>
     <FirebaseAuth>
       {({ isLoading, error, auth }) => {
         if (error) {
@@ -37,7 +36,7 @@ const PostNew = ({ history }) => (
         );
       }}
     </FirebaseAuth>
-  </Page>
+  </div>
 );
 
 export default PostNew;
