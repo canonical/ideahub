@@ -2,7 +2,7 @@
 // similar API to react-firestore, but instead of returning a collection or document,
 // it returns the logged in user (or null if not logged in) along with loading state and errors
 
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 import React from "react";
 
 class FirebaseAuth extends React.Component {
@@ -13,10 +13,9 @@ class FirebaseAuth extends React.Component {
   };
 
   componentDidMount() {
-    this.unsubscribe = Firebase.auth().onAuthStateChanged(
-      this.handleAuth,
-      this.handleError
-    );
+    this.unsubscribe = firebase
+      .auth()
+      .onAuthStateChanged(this.handleAuth, this.handleError);
   }
 
   componentWillUnmount() {

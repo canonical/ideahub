@@ -1,7 +1,8 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 const unlikePost = userLike => {
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("postLikes")
     .doc(userLike.id)
     .delete();

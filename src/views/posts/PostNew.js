@@ -19,8 +19,6 @@ const PostNew = ({ history }) => (
           return <div>loading...</div>;
         }
 
-        console.log(auth);
-
         if (!auth) {
           return (
             <div>

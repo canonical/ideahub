@@ -1,4 +1,4 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 import { prepareDocForUpdate } from "./helpers/firestoreHelpers";
 
@@ -7,7 +7,8 @@ const updateSubscription = (subscriptionId, token) => {
     tempStripePaymentTokenId: token.id
   });
 
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("subscriptions")
     .doc(subscriptionId)
     .update(subscription)

@@ -1,4 +1,4 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 import { prepareDocForCreate } from "./helpers/firestoreHelpers";
 
@@ -7,7 +7,8 @@ const likePost = post => {
     postId: post.id
   });
 
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("postLikes")
     .add(like);
 };

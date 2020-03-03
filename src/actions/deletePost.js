@@ -1,7 +1,8 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 const deletePost = post => {
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("posts")
     .doc(post.id)
     .delete()

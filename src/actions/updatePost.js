@@ -1,9 +1,10 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 import { prepareDocForUpdate } from "./helpers/firestoreHelpers";
 
 const updatePost = (postId, values) => {
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("posts")
     .doc(postId)
     .update(prepareDocForUpdate(values))

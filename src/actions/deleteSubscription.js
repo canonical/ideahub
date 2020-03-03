@@ -1,7 +1,8 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 
 const deleteSubscription = subscription => {
-  return Firebase.firestore()
+  return firebase
+    .firestore()
     .collection("subscriptions")
     .doc(subscription.id)
     .delete()

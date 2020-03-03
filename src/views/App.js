@@ -1,4 +1,4 @@
-import Firebase from "firebase/app";
+import firebase from "firebase/app";
 import { FirestoreProvider } from "react-firestore";
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
@@ -9,7 +9,7 @@ import Layout from "./layout/Layout";
 import "../styles/global";
 
 const App = () => (
-  <FirestoreProvider firebase={Firebase}>
+  <FirestoreProvider firebase={firebase}>
     <BrowserRouter>
       <ErrorBoundary>
         <Layout>
