@@ -8,7 +8,7 @@ This folder contains a little backend code for updating our search index when a 
 
 Before running backend functions, you have to give Firebase your secret API keys. This can be done manually using the [Firebase CLI](https://firebase.google.com/docs/functions/config-env).
 
-For your convenience, Firefly makes this a little easier by including `.env` files in the functions directory.
+For your convenience, Ideahub makes this a little easier by including `.env` files in the functions directory.
 
 1. First you'll have to remove ".example" from the filename of the `.env` files in `functions/`
 2. Add the actual keys from the algolia and stripe websites to those files

@@ -1,4 +1,4 @@
-# Firefly scripts
+# Ideahub scripts
 
 This "scripts" folder contains code that you, the developer, can run from your own machine. Useful for adding dummy data, "migrations", etc.
 

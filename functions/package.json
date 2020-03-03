@@ -1,9 +1,6 @@
 {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
-  "engines": {
-    "node": "10"
-  },
   "scripts": {
     "lint": "eslint .",
     "serve": "firebase serve --only functions",
@@ -14,7 +11,7 @@
   },
   "dependencies": {
     "algoliasearch": "^3.26.0",
-    "firebase-admin": "^8.8.0",
+    "firebase-admin": "8.9.2",
     "firebase-functions": "^3.3.0",
     "stripe": "^5.8.0"
   },

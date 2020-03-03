@@ -1,11 +1,11 @@
 {
-  "name": "firefly-scripts",
+  "name": "Ideahub-scripts",
   "version": "1.0.0",
-  "description": "maint scripts to help developers work with data in firefly apps",
+  "description": "main scripts to help developers work with data in Ideahub apps",
   "main": "index.js",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "chalk": "^2.3.2",
-    "firebase-admin": "^5.11.0"
+    "bluebird": "3.7.2",
+    "chalk": "3.0.0",
+    "firebase-admin": "8.9.2"
   }
 }
