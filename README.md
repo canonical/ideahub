@@ -1,18 +1,8 @@
-A modern web-app boilerplate with Create React App and Firebase. Focused on simplicity for new devs, rapid prototyping, and smallish projects.
-
-### **Full documentation at [getIdeahub.org](http://getIdeahub.org)**
-
-### **[Live Demo](https://demo.getIdeahub.org)**
-
-## Folders
+## Ideahub
 
 Child folders each have their own readmes
 
-- [`/functions`](https://github.com/sampl/Ideahub/tree/master/functions) - contains all the backend code (not much)
-- [`/public`](https://github.com/sampl/Ideahub/tree/master/public) - files that will be available as-is on the web server
-- [`/scripts`](https://github.com/sampl/Ideahub/tree/master/scripts) - convenience scripts for developers
-- [`/src`](https://github.com/sampl/Ideahub/tree/master/src) - the front-end app
-
-## License
-
-[MIT License](https://en.wikipedia.org/wiki/MIT_License)
+- [`/functions`](https://github.com/canonical-web-and-design/ideahub/tree/master/functions) - contains all the backend code (not much)
+- [`/public`](https://github.com/canonical-web-and-design/ideahub/tree/master/public) - files that will be available as-is on the web server
+- [`/scripts`](https://github.com/canonical-web-and-design/ideahub/tree/master/scripts) - convenience scripts for developers
+- [`/src`](https://github.com/canonical-web-and-design/ideahub/tree/master/src) - the front-end app
