@@ -1,9 +1,21 @@
 .floating-cta {
+  align-items: center;
   background: #fff;
   border-top: 1px solid #cdcdcd;
+  bottom: 0;
+  display: flex;
   padding: 0.5rem 1rem;
   position: fixed;
-  bottom: 0;
-  z-index: 1;
   width: 100%;
+  z-index: 1;
+
+  a {
+    color: #000 !important;
+    flex-grow: 1;
+  }
+
+  .p-icon--floating {
+    background-image: url("/collapse.svg");
+    position: relative;
+  }
 }

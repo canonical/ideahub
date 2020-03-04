@@ -1,5 +1,6 @@
 import React from "react";
 import { FirestoreCollection } from "react-firestore";
+import { Link } from "react-router-dom";
 
 import Error from "../misc/Error";
 import FloatingCta from "../../components/FloatingCta/FloatingCta";
@@ -23,7 +24,10 @@ const PostList = () => (
 
         return (
           <div>
-            <FloatingCta>Add an idea</FloatingCta>
+            <FloatingCta>
+              <Link to="/new">Add an idea</Link>
+              <i class="p-icon--floating"></i>
+            </FloatingCta>
             {data.map(idea => (
               <Idea idea={idea} />
             ))}

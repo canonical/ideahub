@@ -1,3 +1,19 @@
 @import "~vanilla-framework/scss/vanilla";
 
 @include vanilla;
+
+// Provide base styles for custom icons
+[class*="p-icon"] {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  font-size: inherit;
+  height: 1rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  text-indent: -9999px;
+  vertical-align: calc(0.5px + 0.3465em - 0.5rem);
+  width: 1rem;
+}

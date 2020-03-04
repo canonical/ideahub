@@ -56,19 +56,6 @@
   }
 
   .p-icon--comments {
-    background-position: center;
     background-image: url("/comments.svg");
-    background-size: contain;
-    height: 1rem;
-    width: 1rem;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: inline-block;
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    vertical-align: calc(0.5px + 0.3465em - 0.5rem);
-    text-indent: -9999px;
   }
 }
