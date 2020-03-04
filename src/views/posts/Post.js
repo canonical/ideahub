@@ -5,6 +5,7 @@ import Error from "../misc/Error";
 import FirebaseAuth from "../misc/FirebaseAuth";
 import LikeButton from "./LikeButton";
 import FloatingCta from "../../components/FloatingCta/FloatingCta";
+import Loading from "../../components/Loading/Loading";
 
 import "./_post.scss";
 
@@ -19,7 +20,7 @@ const Post = ({ match }) => (
       }
 
       if (isLoading) {
-        return <p>Loading...</p>;
+        return <Loading />;
       }
 
       if (data.length === 0) {
@@ -32,7 +33,6 @@ const Post = ({ match }) => (
         <div className="post">
           <div className="row">
             <h1 className="post__title">{post.title}</h1>
-
             <p>{post.content}</p>
             <FirebaseAuth>
               {({ auth }) =>

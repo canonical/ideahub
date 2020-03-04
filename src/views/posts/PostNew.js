@@ -5,6 +5,7 @@ import Error from "../misc/Error";
 import logIn from "../../actions/logIn";
 import createPost from "../../actions/createPost";
 import PostForm from "./PostForm";
+import Loading from "../../components/Loading/Loading";
 
 const PostNew = ({ history }) => (
   <div>
@@ -15,7 +16,7 @@ const PostNew = ({ history }) => (
         }
 
         if (isLoading) {
-          return <div>loading...</div>;
+          return <Loading />;
         }
 
         if (!auth) {
