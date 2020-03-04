@@ -7,8 +7,6 @@ import Header from "../../components/Header/Header";
 
 import "./_layout.scss";
 
-import { Strip, Row, Col } from "@canonical/react-components";
-
 const Layout = ({ children }) => (
   <div className="container">
     <div className="row">

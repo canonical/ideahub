@@ -6,7 +6,6 @@
 // get the values from the form on submit.
 
 import React from "react";
-import FloatingCta from "../../components/FloatingCta/FloatingCta";
 
 import "./_postForm.scss";
 

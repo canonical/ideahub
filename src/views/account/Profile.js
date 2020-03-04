@@ -8,7 +8,11 @@ const Profile = ({ auth }) => (
     render={({ history }) => (
       <>
         <div className="p-media-object">
-          <img src={auth.photoURL} className="p-media-object__image is-round" />
+          <img
+            src={auth.photoURL}
+            alt={auth.displayName}
+            className="p-media-object__image is-round"
+          />
           <div className="p-media-object__details">
             <h3 className="p-media-object__title">{auth.displayName}</h3>
             <p className="p-media-object__content">{auth.email}</p>

@@ -1,9 +1,7 @@
 import React from "react";
 import { FirestoreCollection } from "react-firestore";
-import { Link } from "react-router-dom";
 
 import Error from "../misc/Error";
-// import FloatingCta from "../../components/FloatingCta/FloatingCta";
 import PullPanel from "../../components/PullPanel/PullPanel";
 import Idea from "../../components/Idea/Idea";
 import Loading from "../../components/Loading/Loading";
@@ -23,7 +21,7 @@ const PostList = ({ history }) => (
         }
 
         if (data.length === 0) {
-          return <p>No ideas yet! 😢</p>;
+          return <p>No ideas yet!</p>;
         }
 
         return (

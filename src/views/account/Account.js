@@ -1,6 +1,5 @@
 import React from "react";
 
-import logIn from "../../actions/logIn";
 import FirebaseAuth from "../misc/FirebaseAuth";
 import Error from "../misc/Error";
 import Profile from "./Profile";
