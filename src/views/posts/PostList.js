@@ -26,7 +26,7 @@ const PostList = () => (
           <div>
             <FloatingCta>
               <Link to="/new">Add an idea</Link>
-              <i class="p-icon--floating"></i>
+              <i className="p-icon--floating"></i>
             </FloatingCta>
             {data.map(idea => (
               <Idea idea={idea} />

@@ -22,7 +22,7 @@ export default function Idea({ idea }) {
             <span className="idea__count-label">points</span>
           </div>
           <div className="idea__comments">
-            <i class="p-icon--comments">Comments</i>
+            <i className="p-icon--comments">Comments</i>
             <span className="idea__comments-count">3</span>
           </div>
         </div>

@@ -5,8 +5,10 @@ import FirebaseAuth from "../misc/FirebaseAuth";
 import Error from "../misc/Error";
 import Profile from "./Profile";
 
+import "./_profile.scss";
+
 const Account = () => (
-  <div>
+  <div className="profile">
     <FirebaseAuth>
       {({ isLoading, error, auth }) => {
         if (isLoading) {
@@ -19,17 +21,15 @@ const Account = () => (
 
         if (!auth) {
           return (
-            <div>
-              <p>Log in to see your account</p>
-              <button onClick={logIn}>Log in</button>
+            <div className="row">
+              <p>Log in to see your account.</p>
             </div>
           );
         }
 
         return (
-          <div>
+          <div className="row">
             <Profile auth={auth} />
-            <hr />
           </div>
         );
       }}

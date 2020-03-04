@@ -24,7 +24,7 @@ export default function Header() {
             if (auth) {
               return (
                 <Link to="/account">
-                  <i class="p-icon--user">Your account</i>
+                  <i className="p-icon--user">Your account</i>
                 </Link>
               );
             } else {
