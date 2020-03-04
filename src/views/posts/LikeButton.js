@@ -1,11 +1,9 @@
 import React from 'react'
 import { FirestoreCollection } from 'react-firestore'
 
-import likePost from '../../actions/likePost'
-import unlikePost from '../../actions/unlikePost'
 import FirebaseAuth from '../misc/FirebaseAuth'
 
-const LikeButton = ({post}) => (
+const LikeButton = ({post, likes}) => (
   <FirebaseAuth>
     { ({isLoading, error, auth}) => {
 
@@ -28,14 +26,8 @@ const LikeButton = ({post}) => (
 
           const userLike = data[0]
 
-          return <button onClick={ () => {
-            if (userLike) {
-              unlikePost(userLike)
-            } else {
-              likePost(post)
-            }
-          }}>
-            {userLike ? 'unlike' : 'like'}
+          return <button onClick={ onClickHandler(userLike, post) }>
+            {userLike ? `unlike ${likes}` : `like ${likes}`}
           </button>
         }}
       </FirestoreCollection>
