@@ -4,6 +4,7 @@ import logIn from "../../actions/logIn";
 import FirebaseAuth from "../misc/FirebaseAuth";
 import Error from "../misc/Error";
 import Profile from "./Profile";
+import Loading from "../../components/Loading/Loading";
 
 import "./_profile.scss";
 
@@ -12,7 +13,7 @@ const Account = () => (
     <FirebaseAuth>
       {({ isLoading, error, auth }) => {
         if (isLoading) {
-          return <p>loading...</p>;
+          return <Loading />;
         }
 
         if (error) {

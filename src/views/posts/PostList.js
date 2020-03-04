@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Error from "../misc/Error";
 import FloatingCta from "../../components/FloatingCta/FloatingCta";
 import Idea from "../../components/Idea/Idea";
+import Loading from "../../components/Loading/Loading";
 
 const PostList = () => (
   <div>
@@ -15,7 +16,7 @@ const PostList = () => (
         }
 
         if (isLoading) {
-          return <p>Loading...</p>;
+          return <Loading />;
         }
 
         if (data.length === 0) {
