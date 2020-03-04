@@ -9,6 +9,8 @@ import ReactDOM from "react-dom";
 
 import App from "./views/App";
 
+import "./styles/index.scss";
+
 console.log("create-react-app env:", process.env.NODE_ENV);
 console.log("Ideahub project:", process.env.REACT_APP_ENV);
 

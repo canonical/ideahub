@@ -6,44 +6,56 @@ import React from "react";
 import logIn from "../../actions/logIn";
 import FirebaseAuth from "../misc/FirebaseAuth";
 
+import { Strip, Row, Col } from "@canonical/react-components";
+
 const Layout = ({ children }) => (
   <div>
-    <header>
-      <a href="/">Ideahub</a>
+    <Strip shallow element="section" type="light">
+      <Row>
+        <Col size="6">
+          <a href="/">Ideahub</a>
+        </Col>
 
-      <div style={{ float: "right" }}>
-        <a href="/search">
-          <span role="img" aria-label="search">
-            🔎
-          </span>
-        </a>{" "}
-        <FirebaseAuth>
-          {({ isLoading, error, auth }) => {
-            if (isLoading) {
-              return "...";
-            }
-            if (error) {
-              return "⚠️ login error";
-            }
-            if (auth) {
-              return (
-                <a href={`/account`}>
-                  <span role="img" aria-label="account">
-                    👤
-                  </span>
-                </a>
-              );
-            } else {
-              return <button onClick={logIn}>log in</button>;
-            }
-          }}
-        </FirebaseAuth>
-      </div>
-    </header>
+        <Col size="6" className="u-align--right">
+          <a href="/search">
+            <span role="img" aria-label="search">
+              🔎
+            </span>
+          </a>{" "}
+          <FirebaseAuth>
+            {({ isLoading, error, auth }) => {
+              if (isLoading) {
+                return "...";
+              }
+              if (error) {
+                return "⚠️ login error";
+              }
+              if (auth) {
+                return (
+                  <a href={`/account`}>
+                    <span role="img" aria-label="account">
+                      👤
+                    </span>
+                  </a>
+                );
+              } else {
+                return <button onClick={logIn}>log in</button>;
+              }
+            }}
+          </FirebaseAuth>
+        </Col>
+      </Row>
+    </Strip>
 
-    {children}
+    <Strip element="section">
+      <Row>{children}</Row>
+    </Strip>
 
-    <div>© {new Date().getFullYear()}</div>
+    <Strip shallow element="section" type="dark">
+      <Row>
+        <div>© {new Date().getFullYear()}</div>
+      </Row>
+    </Strip>
   </div>
 );
 
