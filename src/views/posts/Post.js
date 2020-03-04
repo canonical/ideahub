@@ -1,50 +1,57 @@
-import React from 'react'
-import { FirestoreCollection } from 'react-firestore'
+import React from "react";
+import { FirestoreCollection } from "react-firestore";
 
-import Error from '../misc/Error'
-import FirebaseAuth from '../misc/FirebaseAuth'
-import LikeButton from './LikeButton'
+import Error from "../misc/Error";
+import FirebaseAuth from "../misc/FirebaseAuth";
+import LikeButton from "./LikeButton";
+import FloatingCta from "../../components/FloatingCta/FloatingCta";
 
-const Post = ({match}) => (
-  <div>
-    <FirestoreCollection
-      path={'posts'}
-      filter={['slug', '==', match.params.slug]}
-    >
-      { ({error, isLoading, data}) => {
-        if (error) {
-          return <Error error={error} />
-        }
+import "./_post.scss";
 
-        if (isLoading) {
-          return <p>loading...</p>
-        }
+const Post = ({ match }) => (
+  <FirestoreCollection
+    path={"posts"}
+    filter={["slug", "==", match.params.slug]}
+  >
+    {({ error, isLoading, data }) => {
+      if (error) {
+        return <Error error={error} />;
+      }
 
-        if (data.length === 0) {
-          return <Error />
-        }
+      if (isLoading) {
+        return <p>Loading...</p>;
+      }
 
-        const post = data[0]
+      if (data.length === 0) {
+        return <Error />;
+      }
 
-        return <div>
-          <h1>{post.title}</h1>
-          <p>
-            {post._likeCount || 0}
-            {' '}
-            {post._likeCount && post._likeCount === 1 ? 'like' : 'likes'}
-            {' '}
-            <LikeButton post={post} />
-          </p>
-          <p>{post.content}</p>
-          <FirebaseAuth>
-            { ({auth}) => (
-              auth ? <a href={`/${post.slug}/edit`}>Edit</a> : null
-            )}
-          </FirebaseAuth>
+      const post = data[0];
+
+      return (
+        <div className="post">
+          <div className="row">
+            <h1 className="post__title">{post.title}</h1>
+
+            <p>{post.content}</p>
+            <FirebaseAuth>
+              {({ auth }) =>
+                auth ? (
+                  <a className="p-button" href={`/${post.slug}/edit`}>
+                    Edit
+                  </a>
+                ) : null
+              }
+            </FirebaseAuth>
+            <FloatingCta>
+              {post._likeCount || 0}
+              <LikeButton post={post} />
+            </FloatingCta>
+          </div>
         </div>
-      }}
-    </FirestoreCollection>
-  </div>
-)
+      );
+    }}
+  </FirestoreCollection>
+);
 
-export default Post
+export default Post;
