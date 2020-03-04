@@ -1,9 +1,11 @@
 html {
-  background-image: linear-gradient(
-    213deg,
-    #e95420 116%,
-    #772953 70%,
-    #2c001e 14%
+  background: rgb(44, 0, 30);
+  background-size: cover;
+  background: linear-gradient(
+    45deg,
+    rgba(44, 0, 30, 1) 14%,
+    rgba(119, 41, 83, 1) 74%,
+    rgba(233, 84, 32, 1) 116%
   );
   color: #fff;
 }
@@ -12,3 +14,4 @@ footer {
   border-top: 1px solid #f7f7f7;
   font-size: 0.875rem;
 }
+
