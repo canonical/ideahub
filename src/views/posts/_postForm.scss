@@ -1,0 +1,13 @@
+.post-form {
+  background: #fff;
+
+  label {
+    height: 0;
+  }
+
+  input,
+  textarea {
+    border: 0;
+    box-shadow: none !important;
+  }
+}
