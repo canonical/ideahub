@@ -36,7 +36,7 @@ const PostList = ({ history }) => (
               />
             </PullPanel>
             {data.map(idea => (
-              <Idea idea={idea} />
+              <Idea idea={idea} key={idea.id} />
             ))}
           </div>
         );

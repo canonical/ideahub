@@ -5,7 +5,7 @@ import "./_idea.scss";
 
 export default function Idea({ idea }) {
   return (
-    <div className="idea" key={idea.id}>
+    <div className="idea">
       <div className="idea__date">1 day ago</div>
       <div className="idea__body">
         <div className="idea__summary">
