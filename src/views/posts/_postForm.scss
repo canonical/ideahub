@@ -3,11 +3,25 @@
 
   label {
     height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  form {
+    margin-top: 1rem;
   }
 
   input,
   textarea {
     border: 0;
     box-shadow: none !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__actions {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    gap: 1rem;
   }
 }

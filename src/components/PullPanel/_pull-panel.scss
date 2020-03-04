@@ -1,0 +1,35 @@
+.pull-panel {
+  background: #fff;
+  color: #000;
+  min-height: 100vh;
+  padding: 1rem;
+  position: fixed;
+  transform: translateY(calc(100% - 7rem));
+  transition: all 0.5s;
+  z-index: 2;
+
+  &.is-active {
+    transform: translateY(0);
+  }
+
+  &__header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__cta {
+    flex-grow: 1;
+  }
+
+  .p-icon--floating {
+    background-image: url("/collapse.svg");
+    position: relative;
+  }
+
+  &.is-active {
+    .p-icon--floating {
+      transform: rotate(180deg);
+    }
+  }
+}

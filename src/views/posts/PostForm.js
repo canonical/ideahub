@@ -24,40 +24,34 @@ class PostForm extends React.Component {
   render() {
     return (
       <div className="post-form">
-        <div className="row">
-          <form onSubmit={this.onSubmit}>
-            <div className="row">
-              <label htmlFor="title">What's your idea</label>
-              <input
-                type="text"
-                name="title"
-                defaultValue={this.props.post ? this.props.post.title : ""}
-                required
-                placeholder="What's your big idea?"
-              />
-            </div>
+        <form onSubmit={this.onSubmit}>
+          <label htmlFor="title">What's your idea</label>
+          <input
+            type="text"
+            name="title"
+            defaultValue={this.props.post ? this.props.post.title : ""}
+            required
+            placeholder="What's your big idea?"
+          />
 
-            <div>
-              <label htmlFor="content">Add a short description</label>
-              <textarea
-                id="content"
-                name="content"
-                rows="4"
-                cols="50"
-                placeholder="Add a short description"
-                required
-              >
-                {this.props.post ? this.props.post.content : ""}
-              </textarea>
-            </div>
-            <FloatingCta>
-              <button type="reset">Cancel</button>
-              <button className="p-button--positive" type="submit">
-                Submit your idea
-              </button>
-            </FloatingCta>
-          </form>
-        </div>
+          <label htmlFor="content">Add a short description</label>
+          <textarea
+            id="content"
+            name="content"
+            rows="4"
+            cols="50"
+            placeholder="Add a short description"
+            required
+          >
+            {this.props.post ? this.props.post.content : ""}
+          </textarea>
+          <div className="post-form__actions">
+            <button type="reset">Cancel</button>
+            <button className="p-button--positive" type="submit">
+              Submit your idea
+            </button>
+          </div>
+        </form>
       </div>
     );
   }

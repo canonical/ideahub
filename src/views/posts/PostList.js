@@ -3,11 +3,14 @@ import { FirestoreCollection } from "react-firestore";
 import { Link } from "react-router-dom";
 
 import Error from "../misc/Error";
-import FloatingCta from "../../components/FloatingCta/FloatingCta";
+// import FloatingCta from "../../components/FloatingCta/FloatingCta";
+import PullPanel from "../../components/PullPanel/PullPanel";
 import Idea from "../../components/Idea/Idea";
 import Loading from "../../components/Loading/Loading";
+import PostForm from "./PostForm";
+import createPost from "../../actions/createPost";
 
-const PostList = () => (
+const PostList = ({ history }) => (
   <div>
     <FirestoreCollection path={"posts"} sort="_likeCount:desc">
       {({ error, isLoading, data }) => {
@@ -25,10 +28,13 @@ const PostList = () => (
 
         return (
           <div>
-            <FloatingCta>
-              <Link to="/new">Add an idea</Link>
-              <i className="p-icon--floating"></i>
-            </FloatingCta>
+            <PullPanel cta="Add an idea" icon="floating">
+              <PostForm
+                onSubmit={values =>
+                  createPost(values).then(post => history.push(`/${post.slug}`))
+                }
+              />
+            </PullPanel>
             {data.map(idea => (
               <Idea idea={idea} />
             ))}
