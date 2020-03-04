@@ -9,38 +9,36 @@ import PostForm from "./PostForm";
 import createPost from "../../actions/createPost";
 
 const PostList = ({ history }) => (
-  <div>
-    <FirestoreCollection path={"posts"} sort="_likeCount:desc">
-      {({ error, isLoading, data }) => {
-        if (error) {
-          return <Error error={error} />;
-        }
+  <FirestoreCollection path={"posts"} sort="_likeCount:desc">
+    {({ error, isLoading, data }) => {
+      if (error) {
+        return <Error error={error} />;
+      }
 
-        if (isLoading) {
-          return <Loading />;
-        }
+      if (isLoading) {
+        return <Loading />;
+      }
 
-        if (data.length === 0) {
-          return <p>No ideas yet!</p>;
-        }
+      if (data.length === 0) {
+        return <p>No ideas yet!</p>;
+      }
 
-        return (
-          <div>
-            <PullPanel cta="Add an idea" icon="floating">
-              <PostForm
-                onSubmit={values =>
-                  createPost(values).then(post => history.push(`/${post.slug}`))
-                }
-              />
-            </PullPanel>
-            {data.map(idea => (
-              <Idea idea={idea} key={idea.id} />
-            ))}
-          </div>
-        );
-      }}
-    </FirestoreCollection>
-  </div>
+      return (
+        <>
+          <PullPanel cta="Add an idea" icon="floating">
+            <PostForm
+              onSubmit={values =>
+                createPost(values).then(post => history.push(`/${post.slug}`))
+              }
+            />
+          </PullPanel>
+          {data.map(idea => (
+            <Idea idea={idea} key={idea.id} />
+          ))}
+        </>
+      );
+    }}
+  </FirestoreCollection>
 );
 
 export default PostList;

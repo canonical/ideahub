@@ -25,6 +25,10 @@
     color: #cdcdcd !important;
   }
 
+  &__meta {
+    padding: 0 1rem;
+  }
+
   &__points {
     margin-bottom: 0.5rem;
   }
@@ -39,6 +43,7 @@
   }
 
   &__summary {
+    flex-grow: 1;
     padding-right: 1rem;
   }
 

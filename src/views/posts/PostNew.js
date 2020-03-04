@@ -8,36 +8,34 @@ import PostForm from "./PostForm";
 import Loading from "../../components/Loading/Loading";
 
 const PostNew = ({ history }) => (
-  <div>
-    <FirebaseAuth>
-      {({ isLoading, error, auth }) => {
-        if (error) {
-          return <Error error={error} />;
-        }
+  <FirebaseAuth>
+    {({ isLoading, error, auth }) => {
+      if (error) {
+        return <Error error={error} />;
+      }
 
-        if (isLoading) {
-          return <Loading />;
-        }
+      if (isLoading) {
+        return <Loading />;
+      }
 
-        if (!auth) {
-          return (
-            <div>
-              <p>You must be logged in to add ideas</p>
-              <button onClick={logIn}>log in</button>
-            </div>
-          );
-        }
-
+      if (!auth) {
         return (
-          <PostForm
-            onSubmit={values =>
-              createPost(values).then(post => history.push(`/${post.slug}`))
-            }
-          />
+          <>
+            <p>You must be logged in to add ideas</p>
+            <button onClick={logIn}>log in</button>
+          </>
         );
-      }}
-    </FirebaseAuth>
-  </div>
+      }
+
+      return (
+        <PostForm
+          onSubmit={values =>
+            createPost(values).then(post => history.push(`/${post.slug}`))
+          }
+        />
+      );
+    }}
+  </FirebaseAuth>
 );
 
 export default PostNew;
