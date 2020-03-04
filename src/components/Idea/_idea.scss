@@ -1,0 +1,73 @@
+.idea {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+
+  &__body {
+    display: flex;
+  }
+
+  &__date {
+    color: #cdcdcd;
+    font-size: 0.875rem;
+  }
+
+  &__title {
+    color: #fff !important;
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
+  &__desc {
+    color: #cdcdcd !important;
+  }
+
+  &__points {
+    margin-bottom: 0.5rem;
+  }
+
+  &__count {
+    display: block;
+    font-size: 1.5rem;
+  }
+
+  &__count-label {
+    color: #cdcdcd;
+  }
+
+  &__summary {
+    padding-right: 1rem;
+  }
+
+  &__comments {
+    display: flex;
+  }
+
+  &__comments-count {
+    display: inline-block;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #cdcdcd;
+  }
+
+  .p-icon--comments {
+    background-image: url("/comments.svg");
+    background-size: contain;
+    height: 1rem;
+    width: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: calc(0.5px + 0.3465em - 0.5rem);
+    text-indent: -9999px;
+  }
+}

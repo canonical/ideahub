@@ -10,20 +10,12 @@ import "./_layout.scss";
 import { Strip, Row, Col } from "@canonical/react-components";
 
 const Layout = ({ children }) => (
-  <>
+  <div className="container">
     <div className="row">
       <Header />
     </div>
     {children}
-    <footer>
-      <div className="row">
-        <p>
-          &copy; {new Date().getFullYear()} Canonical Ltd. Ubuntu and Canonical
-          are registered trademarks of Canonical Ltd.
-        </p>
-      </div>
-    </footer>
-  </>
+  </div>
 );
 
 export default Layout;

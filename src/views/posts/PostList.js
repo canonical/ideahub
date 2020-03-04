@@ -2,11 +2,11 @@ import React from "react";
 import { FirestoreCollection } from "react-firestore";
 
 import Error from "../misc/Error";
+import FloatingCta from "../../components/FloatingCta/FloatingCta";
+import Idea from "../../components/Idea/Idea";
 
 const PostList = () => (
   <div>
-    <a href="/new">New idea</a>
-    <hr />
     <FirestoreCollection path={"posts"} sort="_likeCount:desc">
       {({ error, isLoading, data }) => {
         if (error) {
@@ -14,23 +14,18 @@ const PostList = () => (
         }
 
         if (isLoading) {
-          return <p>loading...</p>;
+          return <p>Loading...</p>;
         }
 
         if (data.length === 0) {
-          return <p>No ideas yet!</p>;
+          return <p>No ideas yet! 😢</p>;
         }
 
         return (
           <div>
-            {data.map(post => (
-              <div key={post.id}>
-                <a href={`/${post.slug}`}>{post.title}</a>
-                <p>
-                  {post._likeCount || 0}{" "}
-                  {post._likeCount && post._likeCount === 1 ? "like" : "likes"}
-                </p>
-              </div>
+            <FloatingCta>Add an idea</FloatingCta>
+            {data.map(idea => (
+              <Idea idea={idea} />
             ))}
           </div>
         );
