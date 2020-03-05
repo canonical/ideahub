@@ -1,14 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { convertToMilliseconds } from "../../utils";
 
 import "./_idea.scss";
 
 export default function Idea({ idea }) {
+  const ideaCreatedOn = idea.createdOn.seconds || idea.createdOn._seconds;
   return (
     <div className="idea">
       <div className="idea__date">
-        Submitted {moment(idea.createdOn.toMillis()).fromNow()}
+        Submitted {moment(convertToMilliseconds(ideaCreatedOn)).fromNow()}
       </div>
       <div className="idea__body">
         <div className="idea__summary">
