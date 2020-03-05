@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from "react";
 import { FirestoreCollection } from "react-firestore";
 
-import likePost from '../../actions/likePost'
-import unlikePost from '../../actions/unlikePost'
+import likePost from "../../actions/likePost";
+import unlikePost from "../../actions/unlikePost";
 import Error from "../misc/Error";
 import FirebaseAuth from "../misc/FirebaseAuth";
 import LikeButton from "./LikeButton";
@@ -12,22 +12,26 @@ import Loading from "../../components/Loading/Loading";
 import "./_post.scss";
 
 const Post = ({ match }) => {
-  const [likes, setLikes] = useState();
+  const [likes, setLikes] = useState(100);
 
-  const onClickHandler = useCallback((userLike, post) => {
+  const toggleLike = (userLike, post) => {
     if (userLike) {
-      setLikes(likes - 1);
-      unlikePost(userLike);
+      console.log("like post");
+      //setLikes(likes => likes - 1);
+      //unlikePost(userLike);
     } else {
-      setLikes(likes + 1);
-      likePost(post);
+      console.log("unlike post");
+      //setLikes(likes + 1);
+      // likePost(post);
     }
-  }, []);
+  };
 
   return (
     <FirestoreCollection
       path={"posts"}
       filter={["slug", "==", match.params.slug]}
+      likes={likes}
+      setLikes={setLikes}
     >
       {({ error, isLoading, data }) => {
         if (error) {
@@ -43,7 +47,8 @@ const Post = ({ match }) => {
         }
 
         const post = data[0];
-        setLikes(data[0]._likeCount || 0);
+
+        setLikes(post._likeCount);
 
         return (
           <div className="post">
@@ -60,7 +65,7 @@ const Post = ({ match }) => {
                 }
               </FirebaseAuth>
               <FloatingCta>
-                <LikeButton post={post} likes={likes} />
+                <LikeButton post={post} likes={likes} setLikes={setLikes} />
               </FloatingCta>
             </div>
           </div>

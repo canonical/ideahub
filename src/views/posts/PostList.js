@@ -1,5 +1,9 @@
 import React from "react";
 import { FirestoreCollection } from "react-firestore";
+import algoliasearch from "algoliasearch/lite";
+import { InstantSearch, Hits, SearchBox } from "react-instantsearch-dom";
+
+import SearchResult from "./../search/SearchResult";
 
 import Error from "../misc/Error";
 import PullPanel from "../../components/PullPanel/PullPanel";
@@ -7,6 +11,13 @@ import Idea from "../../components/Idea/Idea";
 import Loading from "../../components/Loading/Loading";
 import PostForm from "./PostForm";
 import createPost from "../../actions/createPost";
+
+import "./_postList.scss";
+
+const searchClient = algoliasearch(
+  process.env.REACT_APP_ALGOLIA_APP_ID,
+  process.env.REACT_APP_ALGOLIA_SEARCH_KEY
+);
 
 const PostList = ({ history }) => (
   <FirestoreCollection path={"posts"} sort="_likeCount:desc">
@@ -24,7 +35,7 @@ const PostList = ({ history }) => (
       }
 
       return (
-        <>
+        <div className="post-list">
           <PullPanel cta="Add an idea" icon="floating">
             <PostForm
               onSubmit={values =>
@@ -32,10 +43,13 @@ const PostList = ({ history }) => (
               }
             />
           </PullPanel>
-          {data.map(idea => (
-            <Idea idea={idea} key={idea.id} />
-          ))}
-        </>
+          <div className="row">
+            <InstantSearch searchClient={searchClient} indexName="posts">
+              <SearchBox autofocus />
+              <Hits hitComponent={SearchResult} />
+            </InstantSearch>
+          </div>
+        </div>
       );
     }}
   </FirestoreCollection>

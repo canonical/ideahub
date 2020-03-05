@@ -1,0 +1,33 @@
+.post-list {
+  .ais-Hits {
+    margin-bottom: 3rem;
+  }
+
+  .ais-Hits-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ais-SearchBox {
+    &-input {
+      background-color: transparent;
+      border: solid 1px rgba(#ffffff, 0.5);
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(#ffffff, 0.8);
+      }
+
+      &::-webkit-search-cancel-button {
+        color: #fff;
+        background-color: #fff;
+      }
+    }
+
+    &-submit,
+    &-reset {
+      display: none;
+    }
+  }
+}

@@ -18,7 +18,10 @@ const Profile = ({ auth }) => (
             <p className="p-media-object__content">{auth.email}</p>
           </div>
         </div>
-        <button onClick={() => logOut().then(() => history.push(`/`))}>
+        <button
+          className="p-button--neutral is-dense"
+          onClick={() => logOut().then(() => history.push(`/`))}
+        >
           Log out
         </button>
       </>
