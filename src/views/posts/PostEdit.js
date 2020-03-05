@@ -2,7 +2,7 @@ import React from "react";
 import { FirestoreCollection } from "react-firestore";
 
 import Error from "../misc/Error";
-import deletePost from "../../actions/deletePost";
+import deleteIdea from "../../actions/deletePost";
 import updatePost from "../../actions/updatePost";
 import PostForm from "./PostForm";
 import Loading from "../../components/Loading/Loading";
@@ -25,25 +25,26 @@ const PostEdit = ({ match, history }) => (
         return <Error />;
       }
 
-      const post = data[0];
+      const idea = data[0];
 
       return (
-        <>
+        <div className="row">
+          <h1>Edit idea</h1>
           <PostForm
-            post={post}
+            post={idea}
             onSubmit={values =>
-              updatePost(post.id, values).then(() =>
-                history.push(`/${post.slug}`)
+              updatePost(idea.id, values).then(() =>
+                history.push(`/${idea.slug}`)
               )
             }
           />
           <br />
           <button
-            onClick={() => deletePost(post).then(() => history.push(`/`))}
+            onClick={() => deleteIdea(idea).then(() => history.push(`/`))}
           >
-            Delete post
+            Delete idea
           </button>
-        </>
+        </div>
       );
     }}
   </FirestoreCollection>
