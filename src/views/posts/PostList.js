@@ -7,7 +7,6 @@ import SearchResult from "./../search/SearchResult";
 
 import Error from "../misc/Error";
 import PullPanel from "../../components/PullPanel/PullPanel";
-import Idea from "../../components/Idea/Idea";
 import Loading from "../../components/Loading/Loading";
 import PostForm from "./PostForm";
 import createPost from "../../actions/createPost";

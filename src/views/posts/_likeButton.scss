@@ -1,0 +1,21 @@
+.like-buttons {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+
+  button {
+    display: flex;
+    padding: 0.5rem;
+
+    img {
+      height: 24px;
+      margin-right: 1rem;
+      width: 24px;
+    }
+
+    &.inverted img {
+      transform: rotate(180deg);
+    }
+  }
+}

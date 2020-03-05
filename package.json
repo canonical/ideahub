@@ -6,6 +6,7 @@
     "@canonical/react-components": "0.3.1",
     "algoliasearch": "^4.0.3",
     "firebase": "7.9.3",
+    "gh-pages": "^2.2.0",
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "16.13.0",
@@ -26,7 +27,9 @@
     "start": "sh -ac '. ./.env.dev;   firebase use dev   && react-scripts start'",
     "dev": "  sh -ac '. ./.env.dev;   firebase use dev   && react-scripts build && firebase deploy'",
     "stage": "sh -ac '. ./.env.stage; firebase use stage && react-scripts build && firebase deploy'",
-    "live": " sh -ac '. ./.env.live;  firebase use live  && react-scripts build && firebase deploy'"
+    "live": " sh -ac '. ./.env.live;  firebase use live  && react-scripts build && firebase deploy'",
+    "predeploy": "npm run dev",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
