@@ -5,7 +5,6 @@ import moment from "moment";
 import "./_idea.scss";
 
 export default function Idea({ idea }) {
-  console.log(idea.createdOn.toMillis());
   return (
     <div className="idea">
       <div className="idea__date">
