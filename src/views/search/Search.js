@@ -12,10 +12,6 @@ const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_SEARCH_KEY
 );
 
-// const index = searchClient.initIndex("posts");
-
-console.log(searchClient);
-
 const Search = () => (
   <InstantSearch searchClient={searchClient} indexName="posts">
     <SearchBox autofocus />
