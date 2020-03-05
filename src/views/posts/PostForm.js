@@ -41,9 +41,8 @@ class PostForm extends React.Component {
             cols="50"
             placeholder="Add a short description"
             required
-          >
-            {this.props.post ? this.props.post.content : ""}
-          </textarea>
+            defaultValue={this.props.post ? this.props.post.content : ""}
+          ></textarea>
           <div className="post-form__actions">
             <button type="reset">Cancel</button>
             <button className="p-button--positive" type="submit">
