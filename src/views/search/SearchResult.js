@@ -1,5 +1,8 @@
 import React from "react";
+import Idea from "../../components/Idea/Idea";
 
-const SearchResult = ({ hit }) => <a href={`/${hit.slug}`}>{hit.title}</a>;
+const SearchResult = ({ hit: idea }) => {
+  return <Idea idea={idea} key={idea.id} />;
+};
 
 export default SearchResult;
