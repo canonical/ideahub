@@ -10,7 +10,9 @@ export default function Header() {
   return (
     <header className="p-header">
       <span className="p-header__logo">
-        <Link to="/">ideahub</Link>
+        <Link to="/">
+          <img src="/logo.svg" alt="Ideahub" />
+        </Link>
       </span>
       <span className="p-header__action">
         <FirebaseAuth>
