@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { FirestoreCollection } from "react-firestore";
+import moment from "moment";
+import { convertToMilliseconds } from "../../utils";
 
 import Error from "../misc/Error";
 import FirebaseAuth from "../misc/FirebaseAuth";
@@ -36,10 +38,18 @@ const Post = ({ match }) => {
 
         const idea = data[0];
 
+        console.log(idea);
+
         return (
           <div className="post">
             <div className="row">
-              <h1 className="post__title">
+              <div className="post__date">
+                Submitted{" "}
+                {moment(
+                  convertToMilliseconds(idea.createdOn.seconds)
+                ).fromNow()}
+              </div>
+              <span className="post__title">
                 <span>{idea.title}</span>
                 <FirebaseAuth>
                   {({ auth }) =>
@@ -52,7 +62,7 @@ const Post = ({ match }) => {
                     ) : null
                   }
                 </FirebaseAuth>
-              </h1>
+              </span>
               <p>{idea.content}</p>
 
               <FloatingCta>
@@ -71,7 +81,7 @@ const Post = ({ match }) => {
               >
                 <PostForm
                   post={idea}
-                  buttonText="Edit idea"
+                  buttonText="Update"
                   onSubmit={values =>
                     updatePost(idea.id, values).then(() => {
                       setEditPanelActive(!editPanelActive);
