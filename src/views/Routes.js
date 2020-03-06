@@ -5,7 +5,6 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 
 import PostList from "./posts/PostList";
-import PostNew from "./posts/PostNew";
 import Account from "./account/Account";
 import Post from "./posts/Post";
 import Error from "./misc/Error";
@@ -13,7 +12,6 @@ import Error from "./misc/Error";
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={PostList} />
-    <Route path="/new" component={PostNew} />
     <Route path="/account" component={Account} />
     <Route path="/:slug" component={Post} />
     <Route component={Error} />
