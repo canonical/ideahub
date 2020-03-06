@@ -7,6 +7,7 @@ import "./_idea.scss";
 
 export default function Idea({ idea }) {
   const ideaCreatedOn = idea.createdOn.seconds || idea.createdOn._seconds;
+  let voteCount = idea._likeCount - idea._dislikeCount;
   return (
     <div className="idea">
       <div className="idea__date">
@@ -21,12 +22,12 @@ export default function Idea({ idea }) {
         </div>
         <div className="idea__meta">
           <div className="idea__points">
-            <span className="idea__count">{idea._likeCount || 0}</span>
+            <span className="idea__count">{voteCount || 0}</span>
             <span className="idea__count-label">points</span>
           </div>
           <div className="idea__comments">
-            <i className="p-icon--comments">Comments</i>
-            <span className="idea__comments-count">0</span>
+            {/* <i className="p-icon--comments">Comments</i>
+            <span className="idea__comments-count">0</span> */}
           </div>
         </div>
       </div>

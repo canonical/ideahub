@@ -29,12 +29,7 @@ const LikeButton = ({ post, likes, dislikes }) => {
     <FirebaseAuth>
       {({ isLoading, error, auth }) => {
         if (!auth || isLoading || error) {
-          return (
-            <>
-              <button disabled>Like</button>
-              <button disabled>Dislike</button>
-            </>
-          );
+          return <p>You must log in to vote on this idea.</p>;
         }
 
         return (
@@ -88,7 +83,15 @@ const LikeButton = ({ post, likes, dislikes }) => {
             >
               {({ error, isLoading, data }) => {
                 if (error || isLoading) {
-                  return <button disabled>Dislike</button>;
+                  console.log(error);
+                  return (
+                    <button className="inverted" disabled>
+                      <img
+                        src={process.env.PUBLIC_URL + `/thumb.svg`}
+                        alt="Dislike"
+                      />
+                    </button>
+                  );
                 }
 
                 const userDislike = data[0];
