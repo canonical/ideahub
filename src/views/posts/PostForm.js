@@ -43,10 +43,13 @@ class PostForm extends React.Component {
             required
             defaultValue={this.props.post ? this.props.post.content : ""}
           ></textarea>
-          <div className="post-form__actions">
-            <button className="p-button--positive" type="submit">
-              {this.props.buttonText}
-            </button>
+          <div className="row">
+            <div className="buttons-two-col">
+              <button className="p-button--neutral">Cancel</button>
+              <button className="p-button--positive" type="submit">
+                {this.props.buttonText}
+              </button>
+            </div>
           </div>
         </form>
       </div>

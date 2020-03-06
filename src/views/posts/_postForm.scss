@@ -17,9 +17,9 @@
     box-shadow: none !important;
   }
 
-  &__actions {
-    grid-template-columns: 1fr 1fr;
+  .buttons-two-col {
     display: grid;
     gap: 1rem;
+    grid-template-columns: 1fr 1fr;
   }
 }
