@@ -7,7 +7,6 @@ import { Switch, Route } from "react-router-dom";
 import PostList from "./posts/PostList";
 import PostNew from "./posts/PostNew";
 import Account from "./account/Account";
-import PostEdit from "./posts/PostEdit";
 import Post from "./posts/Post";
 import Error from "./misc/Error";
 
