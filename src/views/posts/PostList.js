@@ -37,6 +37,7 @@ const PostList = ({ history }) => (
         <div className="post-list">
           <PullPanel cta="Add an idea" icon="floating">
             <PostForm
+              buttonText="Add idea"
               onSubmit={values =>
                 createPost(values).then(post => history.push(`/${post.slug}`))
               }

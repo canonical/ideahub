@@ -71,6 +71,7 @@ const Post = ({ match }) => {
               >
                 <PostForm
                   post={idea}
+                  buttonText="Edit idea"
                   onSubmit={values =>
                     updatePost(idea.id, values).then(() => {
                       setEditPanelActive(!editPanelActive);

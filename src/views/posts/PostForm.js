@@ -45,7 +45,7 @@ class PostForm extends React.Component {
           ></textarea>
           <div className="post-form__actions">
             <button className="p-button--positive" type="submit">
-              Confirm
+              {this.props.buttonText}
             </button>
           </div>
         </form>
