@@ -1,15 +1,10 @@
 {
-  "short_name": "Ideahub",
   "name": "Ideahub",
-  "icons": [
-    {
-      "src": "favicon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
-    }
-  ],
-  "start_url": "./index.html",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "short_name": "Ideahub",
+  "theme_color": "#e95420",
+  "background_color": "#7c355d",
+  "display": "minimal-ui",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
 }
