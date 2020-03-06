@@ -1,11 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./_pull-panel.scss";
 
-export default function PullPanel({ children, cta, icon }) {
-  const [panelUp, setpanelUp] = useState(false);
+export default function PullPanel({
+  children,
+  cta,
+  icon,
+  offScreen,
+  initPanelUp = false
+}) {
+  const [panelUp, setpanelUp] = useState(initPanelUp);
 
-  const classNames = `pull-panel ${panelUp ? "is-active" : ""}`;
+  useEffect(() => {
+    setpanelUp(initPanelUp);
+  }, [initPanelUp]);
+
+  const classNames = `pull-panel ${panelUp ? "is-active" : ""} ${
+    offScreen ? "is-offscreen" : ""
+  }`;
   const iconRef = `p-icon--${icon}`;
 
   return (

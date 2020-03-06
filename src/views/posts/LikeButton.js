@@ -63,9 +63,11 @@ const LikeButton = ({ post, likes, dislikes }) => {
                   }
                 };
 
+                const hasVotes = currentLikes > 0 ? "has-votes" : "";
+
                 return (
                   <>
-                    <button onClick={() => toggleLike()}>
+                    <button className={hasVotes} onClick={() => toggleLike()}>
                       <img
                         src={process.env.PUBLIC_URL + `/thumb.svg`}
                         alt="Dislike"
@@ -85,7 +87,6 @@ const LikeButton = ({ post, likes, dislikes }) => {
               ]}
             >
               {({ error, isLoading, data }) => {
-                console.log(error);
                 if (error || isLoading) {
                   return <button disabled>Dislike</button>;
                 }
@@ -97,17 +98,21 @@ const LikeButton = ({ post, likes, dislikes }) => {
                     setCurrentDislikes(currentDislikes => currentDislikes + 1);
                     dislikePost(post);
                   } else {
-                    setCurrentDislikes(currentDislikes => currentDislikes - 1);
+                    if (currentDislikes > 0) {
+                      setCurrentDislikes(
+                        currentDislikes => currentDislikes - 1
+                      );
+                    }
                     undislikePost(userDislike);
                   }
                 };
 
+                const hasVotes = currentDislikes > 0 ? "has-votes" : "";
+                const classes = `inverted ${hasVotes}`;
+
                 return (
                   <>
-                    <button
-                      className="inverted"
-                      onClick={() => toggleDislike()}
-                    >
+                    <button className={classes} onClick={() => toggleDislike()}>
                       <img
                         src={process.env.PUBLIC_URL + `/thumb.svg`}
                         alt="Dislike"

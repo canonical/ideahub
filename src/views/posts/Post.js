@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FirestoreCollection } from "react-firestore";
 
 import Error from "../misc/Error";
 import FirebaseAuth from "../misc/FirebaseAuth";
 import LikeButton from "./LikeButton";
 import FloatingCta from "../../components/FloatingCta/FloatingCta";
+import PullPanel from "../../components/PullPanel/PullPanel";
+import PostForm from "../../views/posts/PostForm";
 import Loading from "../../components/Loading/Loading";
+
+import updatePost from "../../actions/updatePost";
 
 import "./_post.scss";
 
 const Post = ({ match }) => {
+  const [editPanelActive, setEditPanelActive] = useState(false);
+
   return (
     <FirestoreCollection
       path={"posts"}
@@ -38,9 +44,11 @@ const Post = ({ match }) => {
                 <FirebaseAuth>
                   {({ auth }) =>
                     auth ? (
-                      <a className="post__edit" href={`/${idea.slug}/edit`}>
-                        <img src="/edit.svg" alt="Edit idea" />
-                      </a>
+                      <img
+                        src="/edit.svg"
+                        onClick={() => setEditPanelActive(!editPanelActive)}
+                        alt="Edit idea"
+                      />
                     ) : null
                   }
                 </FirebaseAuth>
@@ -54,6 +62,22 @@ const Post = ({ match }) => {
                   dislikes={idea._dislikeCount}
                 />
               </FloatingCta>
+
+              <PullPanel
+                offScreen={true}
+                initPanelUp={editPanelActive}
+                cta="Edit idea"
+                icon="floating"
+              >
+                <PostForm
+                  post={idea}
+                  onSubmit={values =>
+                    updatePost(idea.id, values).then(() => {
+                      setEditPanelActive(!editPanelActive);
+                    })
+                  }
+                />
+              </PullPanel>
             </div>
           </div>
         );

@@ -14,4 +14,11 @@
       height: 25px;
     }
   }
+
+  label,
+  input,
+  textarea {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }

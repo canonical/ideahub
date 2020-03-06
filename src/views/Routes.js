@@ -16,7 +16,6 @@ const Routes = () => (
     <Route exact path="/" component={PostList} />
     <Route path="/new" component={PostNew} />
     <Route path="/account" component={Account} />
-    <Route path="/:slug/edit" component={PostEdit} />
     <Route path="/:slug" component={Post} />
     <Route component={Error} />
   </Switch>

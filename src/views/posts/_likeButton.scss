@@ -17,5 +17,9 @@
     &.inverted img {
       transform: rotate(180deg);
     }
+
+    &.has-votes {
+      background: #cdcdcd;
+    }
   }
 }
