@@ -1,4 +1,10 @@
 .post {
+  &__date {
+    color: #ddd;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+
   &__title {
     display: flex;
     font-size: 1rem;
@@ -7,11 +13,6 @@
 
     span {
       flex-grow: 1;
-    }
-
-    img {
-      width: 25px;
-      height: 25px;
     }
   }
 
