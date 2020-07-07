@@ -6,6 +6,6 @@
   "dependencies": {
     "bluebird": "3.7.2",
     "chalk": "3.0.0",
-    "firebase-admin": "8.9.2"
+    "firebase-admin": "8.13.0"
   }
 }
