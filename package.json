@@ -4,10 +4,10 @@
   "private": true,
   "dependencies": {
     "@canonical/react-components": "0.3.1",
-    "algoliasearch": "^4.0.3",
+    "algoliasearch": "4.0.3",
     "firebase": "7.9.3",
-    "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "moment": "2.24.0",
+    "node-sass": "4.13.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-firestore": "1.0.1",
@@ -18,8 +18,8 @@
     "react-transition-group": "2.3.1",
     "slugify": "1.4.0",
     "styled-components": "3.3.2",
-    "stylelint": "^13.2.0",
-    "stylelint-config-sass-guidelines": "^7.0.0"
+    "stylelint": "13.2.0",
+    "stylelint-config-sass-guidelines": "7.0.0"
   },
   "scripts": {
     "": "How these scripts work: https://medium.com/@tacomanator/environments-with-create-react-app-7b645312c09d",
@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "^7.14.0",
-    "node-sass": "^4.13.1"
+    "firebase-tools": "7.14.0",
+    "node-sass": "4.13.1"
   }
 }
