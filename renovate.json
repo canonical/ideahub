@@ -1,5 +1,15 @@
 {
   "extends": [
-    "config:base"
+    "config:base",
+    "schedule:monthly"
+  ],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "minor": {
+        "groupName": "all non-major dependencies",
+	"groupSlug": "all-minor-patch"
+      }
+    }
   ]
 }
