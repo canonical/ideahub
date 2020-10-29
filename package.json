@@ -41,7 +41,7 @@
     ]
   },
   "devDependencies": {
-    "firebase-tools": "7.14.0",
+    "firebase-tools": "8.14.1",
     "node-sass": "4.13.1"
   }
 }
