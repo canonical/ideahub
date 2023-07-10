@@ -7,7 +7,7 @@
     "algoliasearch": "4.0.3",
     "firebase": "7.9.3",
     "moment": "2.24.0",
-    "node-sass": "4.13.1",
+    "node-sass": "7.0.0",
     "react": "16.13.0",
     "react-dom": "16.13.0",
     "react-firestore": "1.0.1",
@@ -42,6 +42,6 @@
   },
   "devDependencies": {
     "firebase-tools": "7.14.0",
-    "node-sass": "4.13.1"
+    "node-sass": "7.0.0"
   }
 }
